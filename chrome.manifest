@@ -1,0 +1,15 @@
+content	aboutaddons 						chrome/content/
+skin	aboutaddons		skin				chrome/skin/
+locale	aboutaddons		ar				chrome/locale/ar/
+locale	aboutaddons		ca-AD				chrome/locale/ca-AD/
+locale	aboutaddons		de-DE				chrome/locale/de-DE/
+locale	aboutaddons		en-US				chrome/locale/en-US/
+locale	aboutaddons		es-MX				chrome/locale/es-MX/
+locale	aboutaddons		ja-JP				chrome/locale/ja-JP/
+locale	aboutaddons		nl-NL				chrome/locale/nl-NL/
+locale	aboutaddons		pl-PL				chrome/locale/pl-PL/
+locale	aboutaddons		pt-BR				chrome/locale/pt-BR/
+locale	aboutaddons		sr-RS				chrome/locale/sr-RS/
+locale	aboutaddons		tr-TR				chrome/locale/tr-TR/
+locale	aboutaddons		zh-CN				chrome/locale/zh-CN/
+overlay	chrome://mozapps/content/extensions/extensions.xul	chrome://aboutaddons/content/overlay.xul

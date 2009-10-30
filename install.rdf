@@ -1,0 +1,59 @@
+﻿<?xml version="1.0"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+ <Description about="urn:mozilla:install-manifest">
+  <em:name>About Add-ons</em:name>
+  <em:id>{DF3074AA-1298-95DF-4315-72E3C22B503C}</em:id>
+  <em:version>0.3.1</em:version>
+  <em:type>2</em:type>
+  <!-- Firefox -->
+  <em:targetApplication>
+   <Description>
+    <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+    <em:minVersion>2.0</em:minVersion>
+    <em:maxVersion>3.7a1pre</em:maxVersion>
+   </Description>
+  </em:targetApplication>
+  <!-- SeaMonkey -->
+  <em:targetApplication>
+   <Description>
+    <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+    <em:minVersion>2.0a1</em:minVersion>
+    <em:maxVersion>2.1a1pre</em:maxVersion>
+   </Description>
+  </em:targetApplication>
+  <!-- Thunderbird -->
+  <em:targetApplication>
+   <Description>
+    <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+    <em:minVersion>2.0</em:minVersion>
+    <em:maxVersion>3.1a1pre</em:maxVersion>
+   </Description>
+  </em:targetApplication>
+  <!-- Sunbird -->
+  <em:targetApplication>
+   <Description>
+    <em:id>{718e30fb-e89b-41dd-9da7-e25a45638b28}</em:id>
+    <em:minVersion>0.3</em:minVersion>
+    <em:maxVersion>1.0pre</em:maxVersion>
+   </Description>
+  </em:targetApplication>
+  <em:description>Adds an About button to extensions, themes, and languages in the Add-ons list.</em:description>
+  <em:homepageURL>http://realityripple.com/software/xpi/aa</em:homepageURL>
+  <em:iconURL>chrome://aboutaddons/skin/logo.png</em:iconURL>
+  <em:creator>RealityRipple</em:creator>
+  <em:translator>BabelZilla.org - This community is awesome.</em:translator>
+  <em:translator>Thank you to every active member, especially these guys:</em:translator>
+  <em:translator>[ar] Natty Dreed</em:translator>
+  <em:translator>[ca-AD] jordis</em:translator>
+  <em:translator>[de-DE] Markus Stadler</em:translator>
+  <em:translator>[ja-JP] Anonymous</em:translator>
+  <em:translator>[es-MX] Pedro Arana Matus</em:translator>
+  <em:translator>[nl-NL] markh van BabelZilla.org</em:translator>
+  <em:translator>[pl-PL] Leszek(teo)Życzkowski</em:translator>
+  <em:translator>[pt-BR] Marcelo Ghelman (ghelman.net)</em:translator>
+  <em:translator>[sr-RS] Kacnepcku - PC</em:translator>
+  <em:translator>[tr-TR] DepressiveGuN</em:translator>
+  <em:translator>[zh-CN] tawcw</em:translator>
+ </Description>
+</RDF>
