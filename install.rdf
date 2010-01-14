@@ -4,7 +4,7 @@
  <Description about="urn:mozilla:install-manifest">
   <em:name>About Add-ons</em:name>
   <em:id>{DF3074AA-1298-95DF-4315-72E3C22B503C}</em:id>
-  <em:version>0.3.1</em:version>
+  <em:version>0.3.2</em:version>
   <em:type>2</em:type>
   <!-- Firefox -->
   <em:targetApplication>
@@ -27,7 +27,7 @@
    <Description>
     <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
     <em:minVersion>2.0</em:minVersion>
-    <em:maxVersion>3.1a1pre</em:maxVersion>
+    <em:maxVersion>3.2a1pre</em:maxVersion>
    </Description>
   </em:targetApplication>
   <!-- Sunbird -->
@@ -45,15 +45,21 @@
   <em:translator>BabelZilla.org - This community is awesome.</em:translator>
   <em:translator>Thank you to every active member, especially these guys:</em:translator>
   <em:translator>[ar] Natty Dreed</em:translator>
-  <em:translator>[ca-AD] jordis</em:translator>
+  <em:translator>[ca-AD] jordis (jordis@softcatala.cat)</em:translator>
+  <em:translator>[da-DK] Wodak</em:translator>
   <em:translator>[de-DE] Markus Stadler</em:translator>
-  <em:translator>[ja-JP] Anonymous</em:translator>
+  <em:translator>[es-ES] RigoNet</em:translator>
   <em:translator>[es-MX] Pedro Arana Matus</em:translator>
-  <em:translator>[nl-NL] markh van BabelZilla.org</em:translator>
+  <em:translator>[fr] Goofy</em:translator>
+  <em:translator>[ja-JP] Anonymous</em:translator>
+  <em:translator>[mk-MK] renegade06</em:translator>
+  <em:translator>[nl/nl-NL] markh van BabelZilla.org</em:translator>
   <em:translator>[pl-PL] Leszek(teo)Życzkowski</em:translator>
   <em:translator>[pt-BR] Marcelo Ghelman (ghelman.net)</em:translator>
-  <em:translator>[sr-RS] Kacnepcku - PC</em:translator>
+  <em:translator>[ru-RU] Пирятинский Виталий</em:translator>
+  <em:translator>[sr-RS] Republic of Srpska</em:translator>
   <em:translator>[tr-TR] DepressiveGuN</em:translator>
-  <em:translator>[zh-CN] tawcw</em:translator>
+  <em:translator>[uk-UA] starjinsky</em:translator>
+  <em:translator>[zh-CN] yfdyh000</em:translator>
  </Description>
 </RDF>
