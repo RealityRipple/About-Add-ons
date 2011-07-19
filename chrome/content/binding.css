@@ -1,0 +1,8 @@
+aboutAddonsAboutButton
+{
+ -moz-binding: url("chrome://aboutaddons/content/binding.xml#about-button");
+}
+aboutAddonsLegacyAboutButton
+{
+ -moz-binding: url("chrome://aboutaddons/content/binding.xml#legacy-about-button");
+}

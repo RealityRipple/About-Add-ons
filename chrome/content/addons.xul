@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE overlay SYSTEM "chrome://aboutaddons/locale/overlay.dtd" >
+<?xml-stylesheet href="chrome://aboutaddons/content/binding.css" type="text/css"?>
+<overlay id="aboutAddonsOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <script src="chrome://aboutaddons/content/controller.js" type="application/javascript;version=1.7"/>
+</overlay>

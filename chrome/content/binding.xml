@@ -1,0 +1,33 @@
+<!DOCTYPE bindings SYSTEM "chrome://aboutaddons/locale/overlay.dtd">
+<bindings id="aboutAddonBindings"
+          xmlns="http://www.mozilla.org/xbl"
+          xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+          xmlns:xbl="http://www.mozilla.org/xbl"
+          xmlns:html="http://www.w3.org/1999/xhtml">
+ <binding id="about-button">
+  <content>
+   <xul:button anonid="about-btn"
+               class="addon-control about"
+               label="&about.label;"
+               tooltiptext="&about.tooltiptext;"
+               oncommand="document.getBindingParent(this).showAbout();" />
+  </content>
+  <implementation>
+   <field name="_aboutBtn">
+    document.getAnonymousElementByAttribute(this, "anonid", "about-btn");
+   </field>
+   <method name="showAbout">
+    <body><![CDATA[gViewController.doCommand("cmd_showItemAbout", this.mAddon);]]></body>
+   </method>
+  </implementation>
+ </binding>
+
+ <binding id="legacy-about-button">
+  <content>
+   <xul:button class="uninstallHide aboutButton"
+               label="&about.label;" accesskey="&about.accesskey;"
+               tooltiptext="&about.tooltiptext;"
+               command="cmd_about"/>
+  </content>
+ </binding>
+</bindings>
