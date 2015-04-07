@@ -1,4 +1,5 @@
 <!DOCTYPE bindings SYSTEM "chrome://aboutaddons/locale/overlay.dtd">
+<!-- This code is in the public domain. No ownership is implied. -->
 <bindings id="aboutAddonBindings"
           xmlns="http://www.mozilla.org/xbl"
           xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"

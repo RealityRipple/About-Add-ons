@@ -1,3 +1,4 @@
+/* This code is in the public domain. No ownership is implied. */
 if (!com) var com = {};
 if (!com.RealityRipple) com.RealityRipple = {};
 com.RealityRipple.AboutAddons = function()
