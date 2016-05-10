@@ -64,21 +64,17 @@ com.RealityRipple.AboutAddons = function()
     {
      var item = document.getElementById("addon-list").getItemAtIndex(i);
      var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
-     var callback = let (cc = controlContainer) function()
+     var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
+     var cb;
+     if (existings.length)
      {
-      var existings = cc.getElementsByTagName("aboutAddonsAboutButton");
-      var cb;
-      if (existings.length)
-      {
-       cb = existings[0];
-      }
-      else
-      {
-       cb = priv.createButton();
-       cc.insertBefore(cb, cc.firstChild);
-      }
-     };
-     callback();
+      cb = existings[0];
+     }
+     else
+     {
+      cb = priv.createButton();
+      controlContainer.insertBefore(cb, controlContainer.firstChild);
+     }
     }
    }
    else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
