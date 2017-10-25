@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This code is in the public domain. No ownership is implied. -->
 <!DOCTYPE overlay SYSTEM "chrome://aboutaddons/locale/overlay.dtd" >
 <?xml-stylesheet href="chrome://aboutaddons/content/binding.css" type="text/css"?>
 <overlay id="aboutAddonsOverlay"
