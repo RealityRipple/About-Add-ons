@@ -3,7 +3,7 @@
  <Description about="urn:mozilla:install-manifest">
   <em:name>About Add-ons</em:name>
   <em:id>{DF3074AA-1298-95DF-4315-72E3C22B503C}</em:id>
-  <em:version>0.9</em:version>
+  <em:version>0.9.1</em:version>
   <em:type>2</em:type>
   <!-- Firefox -->
   <em:targetApplication>
@@ -63,6 +63,7 @@
   <em:translator>[Hebrew] jnfsmile</em:translator>
   <em:translator>[Hungarian] WonderCsabo</em:translator>
   <em:translator>[Armenian] Hrant Ohanyan (haysoft.org)</em:translator>
+  <em:translator>[Indonesian] Dhanny (kerupuknasi386.blogspot.co.id)</em:translator>
   <em:translator>[Italian] AlexV_IT</em:translator>  
   <em:translator>[Japanese] Anonymous</em:translator>
   <em:translator>[Latvian] Edgars</em:translator>
