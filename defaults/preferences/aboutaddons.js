@@ -1,1 +1,1 @@
-pref("extensions.{DF3074AA-1298-95DF-4315-72E3C22B503C}.description", "chrome://aboutaddons/locale/aboutaddons.properties");
+pref("extensions.{265666C5-D659-5C5A-8C36-9ADA9B367E5B}.description", "chrome://aboutaddons/locale/aboutaddons.properties");

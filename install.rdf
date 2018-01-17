@@ -2,8 +2,8 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
  <Description about="urn:mozilla:install-manifest">
   <em:name>About Add-ons</em:name>
-  <em:id>{DF3074AA-1298-95DF-4315-72E3C22B503C}</em:id>
-  <em:version>0.9.1</em:version>
+  <em:id>{265666C5-D659-5C5A-8C36-9ADA9B367E5B}</em:id>
+  <em:version>1.0</em:version>
   <em:type>2</em:type>
   <!-- Firefox -->
   <em:targetApplication>
