@@ -75,6 +75,7 @@ com.RealityRipple.AboutAddons = function()
       controlContainer.insertBefore(cb, controlContainer.firstChild);
      }
     }
+    document.getElementById("addon-list").addEventListener('select', com.RealityRipple.AboutAddons.newButton, false);
    }
    else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
    {
@@ -93,6 +94,33 @@ com.RealityRipple.AboutAddons = function()
     {
      cb = priv.createButton();
      document.getElementById("detail-enable-btn").parentNode.insertBefore(cb, document.getElementById("detail-enable-btn"));
+    }
+   }
+  }
+  stuffer();
+ }
+
+ pub.newButton = function()
+ {
+  var stuffer = function()
+  {
+   if (document.getElementById("view-port").selectedPanel.id == "list-view")
+   {
+    for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
+    {
+     var item = document.getElementById("addon-list").getItemAtIndex(i);
+     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
+     var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
+     var cb;
+     if (existings.length)
+     {
+      cb = existings[0];
+     }
+     else
+     {
+      cb = priv.createButton();
+      controlContainer.insertBefore(cb, controlContainer.firstChild);
+     }
     }
    }
   }
