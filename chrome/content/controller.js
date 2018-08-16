@@ -10,12 +10,12 @@ com.RealityRipple.AboutAddons = function()
   if (priv.isLegacyEM())
   {
    priv.showLegacyButton();
-   document.getElementById("extensionsView").addEventListener("select", com.RealityRipple.AboutAddons.wait, false);
+   document.getElementById("extensionsView").addEventListener("select", pub.wait, false);
   }
   else
   {
-   document.addEventListener("ViewChanged", com.RealityRipple.AboutAddons.showButton, true);
-   com.RealityRipple.AboutAddons.showButton();
+   document.addEventListener("ViewChanged", pub.showButton, true);
+   pub.showButton();
   }
  }
 
@@ -24,7 +24,7 @@ com.RealityRipple.AboutAddons = function()
  pub.wait = function()
  {
   priv.showLegacyButton();
-  priv.timer.initWithCallback(com.RealityRipple.AboutAddons.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
+  priv.timer.initWithCallback(pub.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
  }
 
  pub.event = 
@@ -75,7 +75,7 @@ com.RealityRipple.AboutAddons = function()
       controlContainer.insertBefore(cb, controlContainer.firstChild);
      }
     }
-    document.getElementById("addon-list").addEventListener('select', com.RealityRipple.AboutAddons.newButton, false);
+    document.getElementById("addon-list").addEventListener('select', pub.newButton, false);
    }
    else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
    {
