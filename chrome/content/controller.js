@@ -1,142 +1,120 @@
-if (!com) var com = {};
-if (!com.RealityRipple) com.RealityRipple = {};
-com.RealityRipple.AboutAddons = function()
+var AboutAddons =
 {
- var pub = {};
- var priv = {};
-
- pub.init = function()
+ timer: Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer),
+ init: function()
  {
-  if (priv.isLegacyEM())
+  if (AboutAddons.isLegacyEM())
   {
-   priv.showLegacyButton();
-   document.getElementById("extensionsView").addEventListener("select", pub.wait, false);
+   AboutAddons.showLegacyButton();
+   document.getElementById("extensionsView").addEventListener("select", AboutAddons.wait, false);
   }
   else
   {
-   document.addEventListener("ViewChanged", pub.showButton, true);
-   pub.showButton();
+   document.addEventListener("ViewChanged", AboutAddons.showButton, true);
+   AboutAddons.showButton();
   }
- }
-
- priv.timer = Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer);
-
- pub.wait = function()
+ },
+ wait: function()
  {
-  priv.showLegacyButton();
-  priv.timer.initWithCallback(pub.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
- }
-
- pub.event = 
+  AboutAddons.showLegacyButton();
+  AboutAddons.timer.initWithCallback(AboutAddons.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
+ },
+ event:
  {
   notify: function(timer)
   {
-   priv.showLegacyButton();
+   AboutAddons.showLegacyButton();
   }
- }
-
- priv.createButton = function()
+ },
+ createButton: function()
  {
   var button = document.createElement("aboutAddonsAboutButton");
   return button;
- }
-
- priv.createLegacyButton = function()
+ },
+ createLegacyButton: function()
  {
   var button = document.createElement("aboutAddonsLegacyAboutButton");
   return button;
- }
-
- priv.isLegacyEM  = function()
+ },
+ isLegacyEM: function()
  {
   // Firefox 3.6 and below
   return document.getElementById("extensionsView");
- }
-
- pub.showButton = function()
+ },
+ showButton: function()
  {
-  var stuffer = function()
+  if (document.getElementById("view-port").selectedPanel.id == "list-view")
   {
-   if (document.getElementById("view-port").selectedPanel.id == "list-view")
+   for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
    {
-    for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
-    {
-     var item = document.getElementById("addon-list").getItemAtIndex(i);
-     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
-     var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
-     var cb;
-     if (existings.length)
-     {
-      cb = existings[0];
-     }
-     else
-     {
-      cb = priv.createButton();
-      controlContainer.insertBefore(cb, controlContainer.firstChild);
-     }
-    }
-    document.getElementById("addon-list").addEventListener('select', pub.newButton, false);
-   }
-   else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
-   {
-    var existings = document.getElementById("detail-view").getElementsByTagName("aboutAddonsAboutButton");
+    var item = document.getElementById("addon-list").getItemAtIndex(i);
+    var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
+    var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
     var cb;
     if (existings.length)
     {
      cb = existings[0];
     }
-    else if (document.getElementById("detail-uninstall"))
+    else
     {
-     cb = priv.createButton();
-     document.getElementById("detail-uninstall").parentNode.insertBefore(cb, document.getElementById("detail-uninstall"));
-    }
-    else if (document.getElementById("detail-enable-btn"))
-    {
-     cb = priv.createButton();
-     document.getElementById("detail-enable-btn").parentNode.insertBefore(cb, document.getElementById("detail-enable-btn"));
+     cb = AboutAddons.createButton();
+     controlContainer.insertBefore(cb, controlContainer.firstChild);
     }
    }
+   document.getElementById("addon-list").addEventListener('select', AboutAddons.newButton, false);
   }
-  stuffer();
- }
-
- pub.newButton = function()
- {
-  var stuffer = function()
+  else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
   {
-   if (document.getElementById("view-port").selectedPanel.id == "list-view")
+   var existings = document.getElementById("detail-view").getElementsByTagName("aboutAddonsAboutButton");
+   var cb;
+   if (existings.length)
    {
-    for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
+    cb = existings[0];
+   }
+   else if (document.getElementById("detail-uninstall"))
+   {
+    cb = AboutAddons.createButton();
+    document.getElementById("detail-uninstall").parentNode.insertBefore(cb, document.getElementById("detail-uninstall"));
+   }
+   else if (document.getElementById("detail-enable-btn"))
+   {
+    cb = AboutAddons.createButton();
+    document.getElementById("detail-enable-btn").parentNode.insertBefore(cb, document.getElementById("detail-enable-btn"));
+   }
+  }
+ },
+ newButton: function()
+ {
+  if (document.getElementById("view-port").selectedPanel.id == "list-view")
+  {
+   for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
+   {
+    var item = document.getElementById("addon-list").getItemAtIndex(i);
+    var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
+    var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
+    var cb;
+    if (existings.length)
     {
-     var item = document.getElementById("addon-list").getItemAtIndex(i);
-     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
-     var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
-     var cb;
-     if (existings.length)
-     {
-      cb = existings[0];
-     }
-     else
-     {
-      cb = priv.createButton();
-      controlContainer.insertBefore(cb, controlContainer.firstChild);
-     }
+     cb = existings[0];
+    }
+    else
+    {
+     cb = AboutAddons.createButton();
+     controlContainer.insertBefore(cb, controlContainer.firstChild);
     }
    }
   }
-  stuffer();
- }
-
- priv.showLegacyButton = function()
+ },
+ showLegacyButton: function()
  {
   if(document.getElementById("aboutButtonOn"))
   {
-   priv.timer.cancel();
+   AboutAddons.timer.cancel();
    return;
   }
-  if (priv.aboutButton && priv.aboutButton.parentNode)
+  if (AboutAddons.aboutButton && AboutAddons.aboutButton.parentNode)
   {
-   priv.aboutButton.parentNode.removeChild(priv.aboutButton);
+   AboutAddons.aboutButton.parentNode.removeChild(AboutAddons.aboutButton);
   }
   var elemExtension = document.getElementById("extensionsView").selectedItem;
   if (!elemExtension)
@@ -144,21 +122,18 @@ com.RealityRipple.AboutAddons = function()
   var elemSelectedButtons = document.getAnonymousElementByAttribute(elemExtension, "anonid", "selectedButtons");
   if (!elemSelectedButtons)
    return;
-  if (!priv.aboutButton)
-   priv.aboutButton = priv.createLegacyButton();
+  if (!AboutAddons.aboutButton)
+   AboutAddons.aboutButton = AboutAddons.createLegacyButton();
   for (var i=0; i<elemSelectedButtons.childNodes.length; i++)
   {
    if (elemSelectedButtons.childNodes[i] && elemSelectedButtons.childNodes[i].nodeType == Node.ELEMENT_NODE
        && elemSelectedButtons.childNodes[i].getAttribute("class").match(/optionsButton/))
    {
-    priv.aboutButton.id="aboutButtonOn";
-    elemSelectedButtons.insertBefore(priv.aboutButton, elemSelectedButtons.childNodes[i]);
+    AboutAddons.aboutButton.id="aboutButtonOn";
+    elemSelectedButtons.insertBefore(AboutAddons.aboutButton, elemSelectedButtons.childNodes[i]);
     break;
    }
   }
  }
-
- return pub;
-}();
-
-addEventListener("load", com.RealityRipple.AboutAddons.init, false);
+};
+addEventListener("load", AboutAddons.init, false);
