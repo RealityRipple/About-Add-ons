@@ -1,11 +1,11 @@
 var AboutAddons =
 {
- timer: Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer),
+ _timer: Components.classes["@mozilla.org/timer;1"].createInstance(Components.interfaces.nsITimer),
  init: function()
  {
-  if (AboutAddons.isLegacyEM())
+  if (AboutAddons._isLegacyEM())
   {
-   AboutAddons.showLegacyButton();
+   AboutAddons._showLegacyButton();
    document.getElementById("extensionsView").addEventListener("select", AboutAddons.wait, false);
   }
   else
@@ -16,17 +16,17 @@ var AboutAddons =
  },
  wait: function()
  {
-  AboutAddons.showLegacyButton();
-  AboutAddons.timer.initWithCallback(AboutAddons.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
+  AboutAddons._showLegacyButton();
+  AboutAddons._timer.initWithCallback(AboutAddons.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
  },
  event:
  {
-  notify: function(timer)
+  notify: function(_timer)
   {
-   AboutAddons.showLegacyButton();
+   AboutAddons._showLegacyButton();
   }
  },
- createButton: function()
+ _createButton: function()
  {
   var button = document.createElement("aboutAddonsAboutButton");
   return button;
@@ -36,7 +36,7 @@ var AboutAddons =
   var button = document.createElement("aboutAddonsLegacyAboutButton");
   return button;
  },
- isLegacyEM: function()
+ _isLegacyEM: function()
  {
   // Firefox 3.6 and below
   return document.getElementById("extensionsView");
@@ -57,7 +57,7 @@ var AboutAddons =
     }
     else
     {
-     cb = AboutAddons.createButton();
+     cb = AboutAddons._createButton();
      controlContainer.insertBefore(cb, controlContainer.firstChild);
     }
    }
@@ -73,12 +73,12 @@ var AboutAddons =
    }
    else if (document.getElementById("detail-uninstall"))
    {
-    cb = AboutAddons.createButton();
+    cb = AboutAddons._createButton();
     document.getElementById("detail-uninstall").parentNode.insertBefore(cb, document.getElementById("detail-uninstall"));
    }
    else if (document.getElementById("detail-enable-btn"))
    {
-    cb = AboutAddons.createButton();
+    cb = AboutAddons._createButton();
     document.getElementById("detail-enable-btn").parentNode.insertBefore(cb, document.getElementById("detail-enable-btn"));
    }
   }
@@ -99,17 +99,17 @@ var AboutAddons =
     }
     else
     {
-     cb = AboutAddons.createButton();
+     cb = AboutAddons._createButton();
      controlContainer.insertBefore(cb, controlContainer.firstChild);
     }
    }
   }
  },
- showLegacyButton: function()
+ _showLegacyButton: function()
  {
   if(document.getElementById("aboutButtonOn"))
   {
-   AboutAddons.timer.cancel();
+   AboutAddons._timer.cancel();
    return;
   }
   if (AboutAddons.aboutButton && AboutAddons.aboutButton.parentNode)
