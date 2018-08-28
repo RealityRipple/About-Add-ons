@@ -30,5 +30,6 @@ locale		aboutaddons			sr				chrome/locale/sr/
 locale		aboutaddons			sv-SE				chrome/locale/sv-SE/
 locale		aboutaddons			tr				chrome/locale/tr/
 locale		aboutaddons			uk				chrome/locale/uk/
+locale		aboutaddons			uk-UA				chrome/locale/uk-UA/
 locale		aboutaddons			zh-CN				chrome/locale/zh-CN/
 locale		aboutaddons			zh-TW				chrome/locale/zh-TW/
