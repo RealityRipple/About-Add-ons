@@ -43,14 +43,15 @@ var AboutAddons =
  },
  showButton: function()
  {
+  var existings;
+  var cb;
   if (document.getElementById("view-port").selectedPanel.id == "list-view")
   {
    for (var i=0; i<document.getElementById("addon-list").itemCount; i++)
    {
     var item = document.getElementById("addon-list").getItemAtIndex(i);
     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
-    var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
-    var cb;
+    existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
     if (existings.length)
     {
      cb = existings[0];
@@ -65,8 +66,7 @@ var AboutAddons =
   }
   else if (document.getElementById("view-port").selectedPanel.id == "detail-view")
   {
-   var existings = document.getElementById("detail-view").getElementsByTagName("aboutAddonsAboutButton");
-   var cb;
+   existings = document.getElementById("detail-view").getElementsByTagName("aboutAddonsAboutButton");
    if (existings.length)
    {
     cb = existings[0];
@@ -126,8 +126,7 @@ var AboutAddons =
    AboutAddons.aboutButton = AboutAddons.createLegacyButton();
   for (var i=0; i<elemSelectedButtons.childNodes.length; i++)
   {
-   if (elemSelectedButtons.childNodes[i] && elemSelectedButtons.childNodes[i].nodeType == Node.ELEMENT_NODE
-       && elemSelectedButtons.childNodes[i].getAttribute("class").match(/optionsButton/))
+   if (elemSelectedButtons.childNodes[i] && elemSelectedButtons.childNodes[i].nodeType == Node.ELEMENT_NODE && elemSelectedButtons.childNodes[i].getAttribute("class").match(/optionsButton/))
    {
     AboutAddons.aboutButton.id="aboutButtonOn";
     elemSelectedButtons.insertBefore(AboutAddons.aboutButton, elemSelectedButtons.childNodes[i]);
