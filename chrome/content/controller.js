@@ -51,6 +51,8 @@ var AboutAddons =
    {
     var item = document.getElementById("addon-list").getItemAtIndex(i);
     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
+    if (controlContainer === null)
+     continue;
     existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
     if (existings.length)
     {
@@ -91,6 +93,8 @@ var AboutAddons =
    {
     var item = document.getElementById("addon-list").getItemAtIndex(i);
     var controlContainer = document.getAnonymousElementByAttribute(item, 'anonid', 'control-container');
+    if (controlContainer === null)
+     continue;
     var existings = controlContainer.getElementsByTagName("aboutAddonsAboutButton");
     var cb;
     if (existings.length)
