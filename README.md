@@ -4,7 +4,7 @@ Insert an About button for each add-on into the Add-ons list.
 #### Supports
  * Pale Moon [25.0a1pre - 29.*]
  * Firefox [2.0 - 50.*]
- * SeaMonkey [2.0a1 - 2.40]
+ * SeaMonkey [2.0a1 - 2.*]
  * Thunderbird [2.0 - 52.*]
  * Sunbird [0.3 - 5.0b2pre]
 
