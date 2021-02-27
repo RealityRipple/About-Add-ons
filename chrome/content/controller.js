@@ -45,7 +45,14 @@ var AboutAddons =
  {
   var existings;
   var cb;
-  if (document.getElementById('view-port').selectedPanel.id === 'list-view')
+  var viewBox = null;
+  if (document.getElementById('headered-views-content') !== null)
+   viewBox = document.getElementById('headered-views-content');
+  else if (document.getElementById('view-port') !== null)
+   viewBox = document.getElementById('view-port');
+  if (viewBox === null)
+   return;
+  if (viewBox.selectedPanel.id === 'list-view')
   {
    for (var i = 0; i < document.getElementById('addon-list').itemCount; i++)
    {
@@ -66,7 +73,7 @@ var AboutAddons =
    }
    document.getElementById('addon-list').addEventListener('select', AboutAddons.newButton, false);
   }
-  else if (document.getElementById('view-port').selectedPanel.id === 'detail-view')
+  else if (viewBox.selectedPanel.id === 'detail-view')
   {
    existings = document.getElementById('detail-view').getElementsByTagName('aboutAddonsAboutButton');
    if (existings.length)
@@ -87,7 +94,14 @@ var AboutAddons =
  },
  newButton: function()
  {
-  if (document.getElementById('view-port').selectedPanel.id === 'list-view')
+  var viewBox = null;
+  if (document.getElementById('headered-views-content') !== null)
+   viewBox = document.getElementById('headered-views-content');
+  else if (document.getElementById('view-port') !== null)
+   viewBox = document.getElementById('view-port');
+  if (viewBox === null)
+   return;
+  if (viewBox.selectedPanel.id === 'list-view')
   {
    for (var i = 0; i < document.getElementById('addon-list').itemCount; i++)
    {
