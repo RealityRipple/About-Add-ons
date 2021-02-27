@@ -49,7 +49,7 @@
   <em:homepageURL>https://realityripple.com/Software/Mozilla-Extensions/About-Add-ons/</em:homepageURL>
   <em:updateURL>https://realityripple.com/Software/Mozilla-Extensions/About-Add-ons/update.rdf</em:updateURL>
   <em:iconURL>chrome://aboutaddons/skin/logo.png</em:iconURL>
-  <em:iconURL64>chrome://aboutaddons/skin/logo64.png</em:iconURL64>
+  <em:icon64URL>chrome://aboutaddons/skin/logo64.png</em:icon64URL>
   <em:creator>RealityRipple</em:creator>
   <em:translator>BabelZilla.org - This community is awesome.</em:translator>
   <em:translator>Thank you to every active member, especially these guys:</em:translator>
