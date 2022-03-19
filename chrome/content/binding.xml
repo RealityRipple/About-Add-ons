@@ -21,12 +21,4 @@
    </method>
   </implementation>
  </binding>
- <binding id="legacy-about-button">
-  <content>
-   <xul:button class="uninstallHide aboutButton"
-               label="&about.label;" accesskey="&about.accesskey;"
-               tooltiptext="&about.tooltiptext;"
-               command="cmd_about"/>
-  </content>
- </binding>
 </bindings>

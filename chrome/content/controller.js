@@ -3,43 +3,13 @@ var AboutAddons =
  _timer: Components.classes['@mozilla.org/timer;1'].createInstance(Components.interfaces.nsITimer),
  init: function()
  {
-  if (AboutAddons._isLegacyEM())
-  {
-   AboutAddons._showLegacyButton();
-   document.getElementById('extensionsView').addEventListener('select', AboutAddons.wait, false);
-  }
-  else
-  {
-   document.addEventListener('ViewChanged', AboutAddons.showButton, true);
-   AboutAddons.showButton();
-  }
- },
- wait: function()
- {
-  AboutAddons._showLegacyButton();
-  AboutAddons._timer.initWithCallback(AboutAddons.event, 1, Components.interfaces.nsITimer.TYPE_REPEATING_SLACK);
- },
- event:
- {
-  notify: function(_timer)
-  {
-   AboutAddons._showLegacyButton();
-  }
+  document.addEventListener('ViewChanged', AboutAddons.showButton, true);
+  AboutAddons.showButton();
  },
  _createButton: function()
  {
   var button = document.createElement('aboutAddonsAboutButton');
   return button;
- },
- createLegacyButton: function()
- {
-  var button = document.createElement('aboutAddonsLegacyAboutButton');
-  return button;
- },
- _isLegacyEM: function()
- {
-  // Firefox 3.6 and below
-  return document.getElementById('extensionsView');
  },
  showButton: function()
  {
@@ -120,35 +90,6 @@ var AboutAddons =
      cb = AboutAddons._createButton();
      controlContainer.insertBefore(cb, controlContainer.firstChild);
     }
-   }
-  }
- },
- _showLegacyButton: function()
- {
-  if(document.getElementById('aboutButtonOn'))
-  {
-   AboutAddons._timer.cancel();
-   return;
-  }
-  if (AboutAddons.aboutButton && AboutAddons.aboutButton.parentNode)
-  {
-   AboutAddons.aboutButton.parentNode.removeChild(AboutAddons.aboutButton);
-  }
-  var elemExtension = document.getElementById('extensionsView').selectedItem;
-  if (!elemExtension)
-   return;
-  var elemSelectedButtons = document.getAnonymousElementByAttribute(elemExtension, 'anonid', 'selectedButtons');
-  if (!elemSelectedButtons)
-   return;
-  if (!AboutAddons.aboutButton)
-   AboutAddons.aboutButton = AboutAddons.createLegacyButton();
-  for (var i = 0; i < elemSelectedButtons.childNodes.length; i++)
-  {
-   if (elemSelectedButtons.childNodes[i] && elemSelectedButtons.childNodes[i].nodeType === Node.ELEMENT_NODE && elemSelectedButtons.childNodes[i].getAttribute('class').match(/optionsButton/))
-   {
-    AboutAddons.aboutButton.id='aboutButtonOn';
-    elemSelectedButtons.insertBefore(AboutAddons.aboutButton, elemSelectedButtons.childNodes[i]);
-    break;
    }
   }
  }
